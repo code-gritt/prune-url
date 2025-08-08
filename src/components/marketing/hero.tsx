@@ -4,6 +4,7 @@ import Icons from "../global/icons";
 import Image from "next/image";
 import Container from "../global/container";
 import { Button } from "../ui/button";
+import { UrlShortenerForm } from "../urls/url-shortener-form";
 
 const Hero = () => {
   return (
@@ -47,6 +48,8 @@ const Hero = () => {
               <Button size="md">Try PruneURL Now</Button>
             </div>
           </Container>
+
+          <UrlShortenerForm />
 
           <Container className="w-full z-30">
             <div className="relative mx-auto max-w-7xl rounded-2xl md:rounded-[32px] border border-neutral-200/50 bg-neutral-100 p-2 backdrop-blur-lg dark:border-neutral-700 dark:bg-neutral-800/50 mt-10 md:mt-14">

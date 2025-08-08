@@ -1,4 +1,5 @@
 import Providers from "@/components/global/providers";
+import { AuthProvider } from "@/components/providers/auth-provider";
 import { ToastProvider } from "@/components/providers/toast-provider";
 import { base, heading } from "@/constants/fonts";
 import { cn } from "@/lib";
@@ -56,10 +57,12 @@ export default function RootLayout({
           heading.variable
         )}
       >
-        <Providers>
-          <ToastProvider />
-          {children}
-        </Providers>
+        <AuthProvider>
+          <Providers>
+            <ToastProvider />
+            {children}
+          </Providers>
+        </AuthProvider>
       </body>
     </html>
   );
