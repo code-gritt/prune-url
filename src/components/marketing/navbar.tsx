@@ -11,8 +11,19 @@ import Icons from "../global/icons";
 import Wrapper from "../global/wrapper";
 import MobileMenu from "./mobile-menu";
 import Image from "next/image";
+import {
+  BarChart3Icon,
+  LayoutDashboard,
+  LogIn,
+  LogOut,
+  UserPlus,
+} from "lucide-react";
+import { signOut, useSession } from "next-auth/react";
 
 const Navbar = () => {
+  const { data: session, status } = useSession();
+  const isAuthenticated = status === "authenticated";
+
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
 
   useEffect(() => {
@@ -75,6 +86,53 @@ const Navbar = () => {
 
         <Container animation="fadeLeft" delay={0.1}>
           <div className="flex items-center gap-x-4">
+            <Button variant={"ghost"} size={"sm"} asChild>
+              <Link href={"/stats"} className="flex items-center gap-1">
+                <BarChart3Icon className="size-4" />
+                Stats
+              </Link>
+            </Button>
+            {isAuthenticated ? (
+              <>
+                <Button variant={"ghost"} size={"sm"} asChild>
+                  <Link href={"/dashboard"} className="flex items-center gap-1">
+                    <LayoutDashboard className="size-4" />
+                    Dashboard
+                  </Link>
+                </Button>
+
+                <Button variant={"ghost"} size={"sm"} asChild>
+                  <Link
+                    href={"/dashboard/stats"}
+                    className="flex items-center gap-1"
+                  >
+                    <LayoutDashboard className="size-4" />
+                    My Stats
+                  </Link>
+                </Button>
+
+                <Button variant={"ghost"} size={"sm"} onClick={() => signOut()}>
+                  <LogOut className="size-4" />
+                  Logout
+                </Button>
+              </>
+            ) : (
+              <>
+                <Button variant={"ghost"} size={"sm"} asChild>
+                  <Link href={"/login"} className="flex items-center gap-1">
+                    <LogIn className="size-4" />
+                    Login
+                  </Link>
+                </Button>
+
+                <Button variant={"ghost"} size={"sm"} asChild>
+                  <Link href={"/register"} className="flex items-center gap-1">
+                    <UserPlus className="size-4" />
+                    Register
+                  </Link>
+                </Button>
+              </>
+            )}
             <Link href="/contact" className="hidden lg:block">
               <Button size="sm" variant="outline">
                 Contact Sales

@@ -1,4 +1,4 @@
-// import { updateUrl } from "@/server/actions/urls/update-url";
+import { updateUrl } from "@/server/actions/urls/update-url";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
@@ -71,19 +71,19 @@ export function EditUrlModal({
       formData.append("id", urlId.toString());
       formData.append("customCode", data.customCode);
 
-      // const response = await updateUrl(formData);
+      const response = await updateUrl(formData);
 
-      // if (response.success && response.data) {
-      //   toast.success("URL updated successfully", {
-      //     description: "The URL has been updated successfully",
-      //   });
-      //   onSuccess(data.customCode);
-      //   onOpenChange(false);
-      // } else {
-      //   toast.error("Failed to update URL", {
-      //     description: response.error || "An error occurred",
-      //   });
-      // }
+      if (response.success && response.data) {
+        toast.success("URL updated successfully", {
+          description: "The URL has been updated successfully",
+        });
+        onSuccess(data.customCode);
+        onOpenChange(false);
+      } else {
+        toast.error("Failed to update URL", {
+          description: response.error || "An error occurred",
+        });
+      }
     } catch (error) {
       console.error("Failed to update URL", error);
       toast.error("Failed to update URL", {
