@@ -83,11 +83,7 @@ export default async function AdminUrlsPage({
 
   return (
     <>
-      <div className="flex items-center justify-between mb-6">
-        <h1 className="text-3xl font-bold tracking-tight">URL Management</h1>
-      </div>
-
-      <div className="grid gap-6">
+      <div className="grid gap-6 my-10">
         <Card className="shadow-sm">
           <CardHeader className="pb-3">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">

@@ -59,11 +59,7 @@ export default function AdminPage() {
 
   return (
     <>
-      <div className="flex items-center justify-between mb-6">
-        <h1 className="text-3xl font-bold tracking-tight">Admin Dashboard</h1>
-      </div>
-
-      <div className="grid gap-6">
+      <div className="grid gap-6 my-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
           {adminModules.map((module) => (
             <Card key={module.href} className="overflow-hidden">

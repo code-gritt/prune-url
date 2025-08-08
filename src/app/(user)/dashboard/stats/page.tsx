@@ -137,9 +137,7 @@ export default function StatsPage() {
 
   return (
     <>
-      <h1 className="text-3xl font-bold mb-8 text-center">URL Statistics</h1>
-
-      <div className="grid gap-8 md:grid-cols-3 mb-8">
+      <div className="grid gap-8 md:grid-cols-3 my-8">
         <Card className="shadow-sm">
           <CardHeader className="pb-2">
             <CardTitle>Total URLs</CardTitle>

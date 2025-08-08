@@ -17,13 +17,7 @@ export const metadata: Metadata = {
 export default function DatabasePage() {
   return (
     <>
-      <div className="flex items-center justify-between mb-6">
-        <h1 className="text-3xl font-bold tracking-tight">
-          Database Management
-        </h1>
-      </div>
-
-      <div className="grid gap-6">
+      <div className="grid gap-6 my-10">
         <Card className="shadow-sm">
           <CardHeader>
             <div className="flex items-center gap-2">

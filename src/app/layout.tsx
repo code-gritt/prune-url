@@ -1,3 +1,4 @@
+import ClientWrapper from "@/components/client-wrapper";
 import Providers from "@/components/global/providers";
 import { AuthProvider } from "@/components/providers/auth-provider";
 import { ToastProvider } from "@/components/providers/toast-provider";
@@ -67,12 +68,14 @@ export default function RootLayout({
           heading.variable
         )}
       >
-        <AuthProvider>
-          <Providers>
-            <ToastProvider />
-            {children}
-          </Providers>
-        </AuthProvider>
+        <ClientWrapper>
+          <AuthProvider>
+            <Providers>
+              <ToastProvider />
+              {children}
+            </Providers>
+          </AuthProvider>
+        </ClientWrapper>
       </body>
     </html>
   );
