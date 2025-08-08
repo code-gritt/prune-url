@@ -3,7 +3,7 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { ApiResponse } from "@/lib/types";
 
-const genAI = new GoogleGenerativeAI(process.env.GOOGLE_GEMINI_API_KEY!);
+const genAI = new GoogleGenerativeAI("AIzaSyDxhNx3QnCGPT-WQlK1IZAvENQzi8gW7O0");
 
 export type UrlSafetyCheck = {
   isSafe: boolean;
@@ -41,7 +41,7 @@ export async function checkUrlSafety(
       };
     }
 
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+    const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash-lite" });
 
     const prompt = `
     Analyze this URL for safety concerns: "${url}"
@@ -84,7 +84,7 @@ export async function checkUrlSafety(
     console.error(error);
     return {
       success: false,
-      error: "Failed to check URL safety"
+      error: "Failed to check URL safety",
     };
   }
 }
