@@ -1,41 +1,50 @@
 export const FAQS = [
-    {
-        question: "Are there any additional costs or hidden fees?",
-        answer: "No, there are no additional costs or hidden fees. The pricing is transparent and includes all features",
-    },
-    {
-        question: "How can I contact support for assistance?",
-        answer: "You can contact our support team via email at support@example.com",
-    },
-    {
-        question: "What are the highlights of your product?",
-        answer: "Our product offers a range of features including real-time collaboration, advanced analytics",
-    },
-    {
-        question: "Where can I buy your product or how can I place an order?",
-        answer: "You can purchase our product directly from our website by visiting the pricing page and selecting your desired plan",
-    },
-    {
-        question: "What is your product's return or exchange policy?",
-        answer: "We offer a 30-day return policy for all our products. If you're not satisfied, you can return it within 30 days for a full refund"
-    }
+  {
+    question: "Are there any additional costs or hidden fees?",
+    answer:
+      "No hidden fees. All features are included in your chosen plan—what you see is what you pay.",
+  },
+  {
+    question: "How can I contact support for assistance?",
+    answer:
+      "You can reach our support team 24/7 at support@pruneurl.com or through the in-app chat.",
+  },
+  {
+    question: "What are the highlights of PruneURL?",
+    answer:
+      "PruneURL offers AI-powered link safety, advanced analytics, QR code generation, and branded short URLs.",
+  },
+  {
+    question: "How do I start using PruneURL?",
+    answer:
+      "Simply sign up at pruneurl.com, choose a plan, and start shortening links instantly—no installation required.",
+  },
+  {
+    question: "Do you offer refunds or a trial period?",
+    answer:
+      "Yes, we offer a 14-day free trial with no credit card required. If you're not satisfied, you can cancel anytime.",
+  },
 ];
 
 export const QUESTIONS = [
-    {
-        title: "Templates",
-        description: "Access a wide range of professionally designed templates to kickstart your projects. Our templates are customizable and follow best practices for modern web development."
-    },
-    {
-        title: "Webflow",
-        description: "Build responsive websites visually with our powerful Webflow integration. Design, develop, and launch your site without writing complex code."
-    },
-    {
-        title: "API Access",
-        description: "Get full access to our robust API with comprehensive documentation. Integrate our services seamlessly into your existing workflows and applications."
-    },
-    {
-        title: "Support",
-        description: "24/7 priority support from our expert team. Get help when you need it with dedicated support channels and detailed documentation."
-    }
+  {
+    title: "Custom Links",
+    description:
+      "Create branded and memorable URLs with custom slugs that reflect your brand and improve click-through rates.",
+  },
+  {
+    title: "Analytics Dashboard",
+    description:
+      "Monitor link performance with detailed insights including clicks, geolocation, devices, referrers, and more.",
+  },
+  {
+    title: "Developer API",
+    description:
+      "Integrate PruneURL into your apps and workflows with our secure, well-documented API and webhooks.",
+  },
+  {
+    title: "AI Safety Engine",
+    description:
+      "Protect your users with real-time malicious link detection powered by AI-based threat analysis.",
+  },
 ];
