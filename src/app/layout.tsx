@@ -50,6 +50,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <meta
+          name="google-site-verification"
+          content="wdlByCZtt15adBudf4vuQ__pWccGvhmx4kxx4n_1pLY"
+        />
+        <meta
+          name="google-adsense-account"
+          content="ca-pub-8291461267710066"
+        ></meta>
+      </head>
       <body
         className={cn(
           "min-h-screen bg-[#050505] text-foreground font-base antialiased dark",
