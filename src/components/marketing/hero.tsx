@@ -51,13 +51,14 @@ const Hero = () => {
           <Container className="w-full z-30">
             <div className="relative mx-auto max-w-7xl rounded-2xl md:rounded-[32px] border border-neutral-200/50 bg-neutral-100 p-2 backdrop-blur-lg dark:border-neutral-700 dark:bg-neutral-800/50 mt-10 md:mt-14">
               <div className="rounded-lg md:rounded-[24px] border border-neutral-200 bg-white dark:border-neutral-700 dark:bg-black">
-                <Image
-                  src="/images/dashboard.png"
-                  alt="PruneURL Dashboard"
-                  priority
+                <video
+                  src="/video1.mp4"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
                   width={2932}
                   height={1664}
-                  loading="eager"
                   className="rounded-[16px] md:rounded-[26px]"
                 />
               </div>

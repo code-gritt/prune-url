@@ -1,3 +1,4 @@
+import ClientWrapper from "@/components/client-wrapper";
 import Blogs from "@/components/marketing/blogs";
 import Companies from "@/components/marketing/companies";
 import CTA from "@/components/marketing/cta";
@@ -10,16 +11,18 @@ import Testimonials from "@/components/marketing/testimonials";
 
 const HomePage = () => {
   return (
-    <div className="w-full relative flex flex-col pt-16">
-      <Hero />
-      <Companies />
-      <HowItWorks />
-      <Features />
-      <Faq />
-      <Stats />
-      <Testimonials />
-      <CTA />
-    </div>
+    <ClientWrapper>
+      <div className="w-full relative flex flex-col pt-16">
+        <Hero />
+        <Companies />
+        <HowItWorks />
+        <Features />
+        <Faq />
+        <Stats />
+        <Testimonials />
+        <CTA />
+      </div>
+    </ClientWrapper>
   );
 };
 
