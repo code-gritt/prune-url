@@ -67,25 +67,25 @@ const Navbar = () => {
           </Link>
         </motion.div>
 
-        <div className="hidden lg:flex flex-row flex-1 absolute inset-0 items-center justify-center w-max mx-auto gap-x-3 text-sm text-muted-foreground font-medium">
-          <AnimatePresence>
-            {NAV_LINKS.map((link, index) => (
-              <Container key={index} animation="fadeDown" delay={0.1 * index}>
-                <div className="relative">
-                  <Link
-                    href={link.link}
-                    className="hover:text-foreground transition-all duration-500 px-1.5"
-                  >
-                    {link.name}
-                  </Link>
-                </div>
-              </Container>
-            ))}
-          </AnimatePresence>
-        </div>
-
         <Container animation="fadeLeft" delay={0.1}>
+          {/* <div className="hidden lg:flex flex-row flex-1 absolute inset-0 items-center justify-center w-max mx-auto gap-x-3 text-sm text-muted-foreground font-medium">
+        
+          </div> */}
           <div className="flex items-center gap-x-4">
+            <AnimatePresence>
+              {NAV_LINKS.map((link, index) => (
+                <Container key={index} animation="fadeDown" delay={0.1 * index}>
+                  <div className="relative">
+                    <Link
+                      href={link.link}
+                      className="hover:text-foreground transition-all duration-500 px-1.5"
+                    >
+                      {link.name}
+                    </Link>
+                  </div>
+                </Container>
+              ))}
+            </AnimatePresence>
             <Button variant={"ghost"} size={"sm"} asChild>
               <Link href={"/stats"} className="flex items-center gap-1">
                 <BarChart3Icon className="size-4" />
