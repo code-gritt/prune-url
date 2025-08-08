@@ -5,7 +5,7 @@ import { useState } from "react";
 import { Button } from "../ui/button";
 import { formatDistanceToNow } from "date-fns";
 import { toast } from "sonner";
-// import { deleteUrl } from "@/server/actions/urls/delete-url";
+import { deleteUrl } from "@/server/actions/urls/delete-url";
 import { QRCodeModal } from "../modals/qr-code-modal";
 import { EditUrlModal } from "../modals/edit-url-modal";
 
@@ -50,26 +50,26 @@ export function UserUrlsTable({ urls }: UserUrlsTableProps) {
   const handleDelete = async (id: number) => {
     setIsDeleting(id);
 
-    // try {
-    //   const response = await deleteUrl(id);
-    //   if (response.success) {
-    //     setLocalUrls((prev) => prev.filter((url) => url.id !== id));
-    //     toast.success("URL deleted successfully", {
-    //       description: "The URL has been deleted successfully",
-    //     });
-    //   } else {
-    //     toast.error("Failed to delete URL", {
-    //       description: response.error || "An error occurred",
-    //     });
-    //   }
-    // } catch (error) {
-    //   console.error("Failed to delete URL", error);
-    //   toast.error("Failed to delete URL", {
-    //     description: "An error occurred",
-    //   });
-    // } finally {
-    //   setIsDeleting(null);
-    // }
+    try {
+      const response = await deleteUrl(id);
+      if (response.success) {
+        setLocalUrls((prev) => prev.filter((url) => url.id !== id));
+        toast.success("URL deleted successfully", {
+          description: "The URL has been deleted successfully",
+        });
+      } else {
+        toast.error("Failed to delete URL", {
+          description: response.error || "An error occurred",
+        });
+      }
+    } catch (error) {
+      console.error("Failed to delete URL", error);
+      toast.error("Failed to delete URL", {
+        description: "An error occurred",
+      });
+    } finally {
+      setIsDeleting(null);
+    }
   };
 
   const showQrCode = (shortCode: string) => {

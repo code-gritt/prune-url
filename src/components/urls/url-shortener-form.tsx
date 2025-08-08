@@ -14,7 +14,7 @@ import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
-// import { shortenUrl } from "@/server/actions/urls/shorten-url";
+import { shortenUrl } from "@/server/actions/urls/shorten-url";
 import { Card, CardContent } from "../ui/card";
 import { AlertTriangle, Copy, QrCode } from "lucide-react";
 import { useSession } from "next-auth/react";
@@ -65,30 +65,30 @@ export function UrlShortenerForm() {
         formData.append("customCode", data.customCode.trim());
       }
 
-      // const response = await shortenUrl(formData);
+      const response = await shortenUrl(formData);
 
-      // if (response.success && response.data) {
-      //   setShortUrl(response.data.shortUrl);
-      //   // Extract the short code from the short URL
-      //   const shortCodeMatch = response.data.shortUrl.match(/\/r\/([^/]+)$/);
-      //   if (shortCodeMatch && shortCodeMatch[1]) {
-      //     setShortCode(shortCodeMatch[1]);
-      //   }
+      if (response.success && response.data) {
+        setShortUrl(response.data.shortUrl);
+        // Extract the short code from the short URL
+        const shortCodeMatch = response.data.shortUrl.match(/\/r\/([^/]+)$/);
+        if (shortCodeMatch && shortCodeMatch[1]) {
+          setShortCode(shortCodeMatch[1]);
+        }
 
-      //   if (response.data.flagged) {
-      //     setFlaggedInfo({
-      //       flagged: response.data.flagged,
-      //       reason: response.data.flagReason || null,
-      //       message: response.data.message,
-      //     });
+        if (response.data.flagged) {
+          setFlaggedInfo({
+            flagged: response.data.flagged,
+            reason: response.data.flagReason || null,
+            message: response.data.message,
+          });
 
-      //     toast.warning(response.data.message || "This URL is flagged", {
-      //       description: response.data.flagReason,
-      //     });
-      //   } else {
-      //     toast.success("URL shortened successfully");
-      //   }
-      // }
+          toast.warning(response.data.message || "This URL is flagged", {
+            description: response.data.flagReason,
+          });
+        } else {
+          toast.success("URL shortened successfully");
+        }
+      }
 
       if (session?.user && pathname.includes("/dashboard")) {
         router.refresh();
