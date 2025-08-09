@@ -112,23 +112,6 @@ export function LoginForm() {
 
   return (
     <div className="space-y-6">
-      <div className="grid gap-2">
-        <Button
-          variant={"outline"}
-          disabled={isLoading}
-          onClick={handleGithubSignIn}
-        >
-          Sign in with GitHub
-        </Button>
-        <Button
-          variant={"outline"}
-          disabled={isLoading}
-          onClick={handleGoogleSignIn}
-        >
-          Sign in with Google
-        </Button>
-      </div>
-
       <div className="relative">
         <div className="absolute inset-0 flex items-center">
           <span className="w-full border-t" />
